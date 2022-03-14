@@ -7,7 +7,7 @@
 *::before,
 *::after {
 	box-sizing: border-box;
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
 }
 body {
@@ -19,8 +19,8 @@ body {
  =====================*/
 :root {
 	/* font family */
-	--ff-primary: 'Barlow', 'san-serif';
-	--ff-secondary: 'Roboto', 'monospace';
+	--ff-primary: 'Roboto', 'san-serif';
+	--ff-secondary: 'Barlow', 'san-serif';
 
 	/* font weight */
 	--fw-400: 400;
@@ -28,125 +28,108 @@ body {
 	--fw-700: 700;
 
 	/* font style  */
-	-fs-title: 16px;
-	-fs-dish: 15px;
-	-fs-p: 8px;
+	--fs-title: 16px;
+	--fs-dish: 15px;
+	--fs-list: 12;
+	--fs-p: 8px;
 
 	/* font color  */
-	-fc-title: #121212;
-	-fc-p: #999999;
+	--fc-primary: #121212;
+	--fc-accent: #999999;
 	--fc-white: #ffffff;
 
 	/* background color */
-	--clr-toggle-btn: #67cecc;
-	--clr-price-btn: #67cecc;
-	--clr-payment-btn: #eb9b3e;
-	--clr-selected-item: rgba(103, 206, 204, 0.3);
-	--selectes-item-shadow: inset 0px 0px 2px 2px #ffffff;
+	--clr-primary: #67cecc;
+	--clr-action: #eb9b3e;
+}
+
+/*=====================
+    Short Cuts 
+ =====================*/
+
+.flex {
+	display: flex;
+	justify-content: space-between;
 }
 
 /*=====================
     Typograpghy layout 
  =====================*/
+body {
+	font-family: var(--ff-primary);
+}
+
 h1 {
-	font-size: var(-fs-title);
+	font-size: var(--fs-title);
 }
 h2 {
-	font-size: var(-fs-dish);
+	font-size: var(--fs-dish);
 }
 p {
-	font-size: var(-fs-p);
+	font-size: var(--fs-p);
 }
 
 /*=====================
     Header layout 
  =====================*/
 
-.header {
+.hero {
 	margin: 0 auto;
-	background-image: url('/img/DSC07915.JPG');
+	background-image: url('/img/hero.jpg');
 	background-position: center;
 	background-size: cover;
 	filter: drop-shadow(0px 1px 4px #67cecc);
-	min-height: 450px;
-	max-width: 540px;
+	min-height: 164px;
+	max-width: 100%;
 }
 
-.header-layout {
-	padding: 1.5px 3px;
-
-	min-height: 450px;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-.nav-toggle {
-	align-self: flex-start;
+.hero__logo {
+	align-self: end;
+	margin-bottom: 1em;
 }
 
-.search-icon {
-	margin-left: auto;
-}
-
-.logo {
-	position: relative;
-	top: 50px;
-	align-self: flex-end;
-}
-.logo-img {
-	margin: 0;
-
-	margin-top: auto;
+.hero__logo-size {
+	min-height: 50px;
 	width: 100%;
 }
-/* hamburger btn  & search icon */
-.fa-solid {
-	color: white;
-}
-#nav-toggle span {
-	margin-top: 15px;
-}
 
-#nav-toggle span,
-#nav-toggle span:before,
-#nav-toggle span:after {
+.hero__menu {
+	margin-left: 1em;
+	margin-top: 0.5em;
 	cursor: pointer;
-	border-radius: 1px;
-	height: 5px;
-	width: 35px;
-	background: white;
-	position: absolute;
-	display: block;
-	content: '';
-}
-#nav-toggle span:before {
-	top: -10px;
-}
-#nav-toggle span:after {
-	bottom: -10px;
 }
 
-/*=====================
-    Header layout 
- =====================*/
-.nav-bar {
-	max-width: 540px;
-	margin: 10px auto;
-}
-.list-items {
-	display: flex;
-	justify-content: space-between;
+.hero__search {
+	margin-right: 1em;
+	margin-top: 0.5em;
+	cursor: pointer;
 }
 
-.item {
-	background: var(--clr-toggle-btn);
-	border-radius: 5px;
-	color: var(--fc-white);
-	font-weight: var(--fw-700);
-	font-family: var(--ff-primary);
-	padding: 15px 30px;
+.scrollbar--wrap {
+	flex-wrap: nowrap;
+	overflow: scroll;
 	list-style: none;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	/* Hide scrollbar for IE, Edge and Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar--wrap::-webkit-scrollbar {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	display: none;
+}
+
+.scorllbar__item {
+	font-size: var(--fs-list);
+	font-family: var(--ff-secondary);
+	font-weight: var(--fw-700);
+	color: var(--fc-white);
+	text-align: center;
+	background: #67cecc;
+	box-shadow: 0px 1px 4px #67cecc;
+	border-radius: 7px;
+	margin: 1em;
+	padding: 0.25em 1.5em;
 	cursor: pointer;
 }
 
@@ -156,6 +139,120 @@ p {
 .container {
 	max-width: 540px;
 }
+.story__title--header,
+.story__card {
+	margin: 0.25em;
+}
+.story__title--header {
+	border-bottom: 1px solid var(--clr-primary);
+	margin-top: 1em;
+}
+.story__card {
+	/* this the code opacity, because our opacity work better 
+	with rgba than hex , u can try honey , the code below */
+
+	/* we should add this color sleeve to our custom values  */
+	background-color: rgba(103, 206, 204, 0.2);
+	/* background-color: var(--clr-primary);
+	opacity: 0.2; */
+}
+
+.title {
+	font-weight: var(--fw-700);
+}
+
+.story__card {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 20px 20px 20px 20px;
+	gap: 3px;
+	grid-template-areas:
+		'pic des price'
+		'pic des price'
+		'pic des price';
+}
+.story__img {
+	grid-area: pic;
+	grid-column: -1/1;
+	margin: 0 0.5em;
+}
+.story__title {
+	grid-area: des;
+	grid-column: 2/6;
+}
+.story_des {
+	grid-area: des;
+	grid-row: -2/2;
+	grid-column: 2/6;
+}
+.story__price {
+	grid-area: des;
+	grid-column: 2/3;
+	grid-row: 3/4;
+}
+/* price button */
+.story__price {
+	cursor: pointer;
+	font-size: var(--fs-p);
+	font-family: var(--ff-secondary);
+	font-weight: var(--fw-700);
+	color: var(--fc-white);
+	text-align: center;
+	background: #67cecc;
+	border-radius: 5px;
+	padding: 0.5em 2em;
+}
+.story_count {
+	grid-area: price;
+	grid-column: 5/6;
+	grid-row: 3/4;
+}
+.story_count {
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+	margin-right: 0.5em;
+	border: 3px solid var(--clr-primary);
+	background-color: rgba(103, 206, 204, 0.2);
+	color: #121212;
+	font-weight: var(--fw-700);
+	text-align: center;
+}
+
+/*=====================
+    footer layout 
+ =====================*/
+.footer {
+	cursor: pointer;
+	background-color: var(--clr-action);
+	color: var(--fc-white);
+	max-width: 450px;
+	margin: 1em 0.5em;
+	border-radius: 10px;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em 1em;
+}
+
+.footer__count {
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+	margin-right: 0.5em;
+	border: 3px solid white;
+	line-height: 1.8;
+	margin-right: 1em;
+}
+.footer__price {
+	margin-top: 0.5em;
+}
+
+.footer__cart {
+	margin-left: 1em;
+	font-size: 26px;
+}
+
 /*=====================
     Media Query 1040px layout 
  =====================*/
