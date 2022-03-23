@@ -7,7 +7,7 @@
 		<!-- google font -->
 
 		<link
-			href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400;900&family=Source+Sans+Pro:wght@300;900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;900&family=Source+Sans+Pro:wght@300;900&display=swap"
 			rel="stylesheet"
 		/>
 		<!-- for search icon -->
@@ -16,71 +16,259 @@
 			crossorigin="anonymous"
 		></script>
 		<!-- css -->
-		<link rel="stylesheet" href="/website/style.css" />
+		<link rel="stylesheet" href="./style.css" />
 		<!-- js -->
-		<script src="/website/index.js" defer></script>
+		<script src="./script.js" defer></script>
 		<title>Adrenaline</title>
 	</head>
 	<body>
-		<header class="header" id="header">
-			<div class="header-layout">
-				<a class="nav-toggle" id="nav-toggle" href="#"><span></span></a>
-				<div class="logo">
-					<img class="logo-img" src="/img/LogoText.png" alt="" />
+		<header class="header">
+			<div class="hero flex flex--sb">
+				<div class="hero__user">
+					<i class="fas fa-user-alt"></i>
 				</div>
-				<div class="search-icon" id="search-icon">
-					<i class="fa-solid fa-magnifying-glass fa-2x"></i>
+				<div class="hero__menu">
+					<img src="./img/burger.svg" alt="menu icon" />
+				</div>
+				<div class="hero__logo">
+					<img class="hero__logo-size" src="./img/logo.svg" alt="logo" />
+				</div>
+				<div class="hero__search">
+					<img src="./img/search.svg" alt="search icon" />
+				</div>
+				<div class="hero__links">
+					<a class="hero__links-style" href="#">About us</a>
+					<a class="hero__links-style" href="#">Locations</a>
+					<a class="hero__links-style" href="#">Contact</a>
+					<div class="hero__cart"><i class="fa fa-shopping-cart"></i></div>
 				</div>
 			</div>
+
+			<nav class="scrollbar">
+				<ul class="flex scrollbar--wrap">
+					<li class="scorllbar__item scorllbar__item--chosen flex">
+						<span class="scorllbar__text">Promotions</span>
+					</li>
+					<li class="scorllbar__item flex">
+						<span class="scorllbar__text">Cookies</span>
+					</li>
+					<li class="scorllbar__item flex">
+						<span class="scorllbar__text">Brownies</span>
+					</li>
+					<li class="scorllbar__item flex">
+						<span class="scorllbar__text">Adrenaline Bites</span>
+					</li>
+					<li class="scorllbar__item flex">
+						<span class="scorllbar__text">Brownies</span>
+					</li>
+					<li class="scorllbar__item flex">
+						<span class="scorllbar__text">Adrenaline Bites</span>
+					</li>
+				</ul>
+			</nav>
 		</header>
 
-		<nav class="nav-bar" id="nav-bar">
-			<ul class="list-items">
-				<li class="item" id="#Best-Seller">Best Seller</li>
-				<li class="item" id="#Cookies">Cookies</li>
-				<li class="item" id="#Brownies">Brownies</li>
-				<li class="item" id="#Bites">Ice Cream</li>
-			</ul>
-		</nav>
-		<div class="container" id="container">
-			<!-- best seller -->
-			<section class="card" id="card">
-				<h1>Best Seller</h1>
-				<h2 class="item-name">Milk Chocolate Chips Cookies</h2>
-				<p class="item-desc">12 pieces milk chocolate chips cookies.</p>
-				<br />
-				<img src="" alt="" />
-				<button class="price-btn">7.000 KWD</button>
-			</section>
-			<!-- cookies-->
-			<section class="card" id="card">
-				<h1>Cookies</h1>
-				<h2 class="item-name">Milk Chocolate Chips Cookies</h2>
-				<p class="item-desc">12 pieces milk chocolate chips cookies.</p>
-				<br />
-				<img src="" alt="" />
-				<button class="price-btn">7.000 KWD</button>
-			</section>
-			<!-- brownies -->
-			<section class="card" id="card">
-				<h1>Brownies</h1>
+		<main>
+			<div class="story">
+				<div class="story_title">
+					<h1 class="title">Promotions</h1>
+				</div>
+				<div class="container">
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Milk Chocolate Chips Cookies</h2>
+							<p class="card_des">12 pieces milk chocolate chips cookies.</p>
+							<div class="card__price">7.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/01.jpg" alt="" class="card__img" />
+					</section>
+				</div>
+			</div>
+			<div class="story">
+				<div class="story_title">
+					<h1 class="title">Cookies</h1>
+				</div>
+				<div class="container">
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Dipping Cookies Bites</h2>
+							<p class="card_des">
+								Dozen of cookies bites with one dipping chocolate sauce.
+							</p>
+							<div class="card__price">7.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/02.png" alt="" class="card__img" />
+					</section>
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Kinder Cookies</h2>
+							<p class="card_des">10 pcs of stuffed kinder cookies.</p>
+							<div class="card__price">5.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/03.png" alt="" class="card__img" />
+					</section>
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Double Chocolate Cookies</h2>
+							<p class="card_des">10 pieces of double chocolate cookies.</p>
+							<div class="card__price">5.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/04.png" alt="" class="card__img" />
+					</section>
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Double Chocolate Cookies Bites</h2>
+							<p class="card_des">12 pieces with white chocolate sauce.</p>
+							<div class="card__price">5.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/05.png" alt="" class="card__img" />
+					</section>
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Kinder Cookies Cake</h2>
+							<p class="card_des">Kinder cookies cake (8-10 person).</p>
+							<div class="card__price">9.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/06.png" alt="" class="card__img" />
+					</section>
+				</div>
+			</div>
+			<div class="story">
+				<div class="story_title">
+					<h1 class="title">Brownies</h1>
+				</div>
+				<div class="container">
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Kinder Brownies Bites</h2>
+							<p class="card_des">
+								16 piece of brownies cookies mixture stuffed with kinder.
+							</p>
+							<div class="card__price">6.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/07.png" alt="" class="card__img" />
+					</section>
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Nutella Brownies Bites</h2>
+							<p class="card_des">
+								16 piece of brownies cookies mixture stuffed with Nutella.
+							</p>
+							<div class="card__price">6.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/08.png" alt="" class="card__img" />
+					</section>
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Brownies Truffles</h2>
+							<p class="card_des">
+								20 pcs of brownies truffles with chocolate dipping sauce.
+							</p>
+							<div class="card__price">5.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/09.png" alt="" class="card__img" />
+					</section>
+				</div>
+			</div>
+			<div class="story">
+				<div class="story_title">
+					<h1 class="title">Adrenaline Bites</h1>
+				</div>
+				<div class="container">
+					<section class="card flex">
+						<div class="card_info flex flex--col flex--sb">
+							<h2 class="card__title">Crunchy Ice Cream Bites</h2>
+							<p class="card_des">
+								Vanilla ice cream covered with crispy chocolate 14 pieces.
+							</p>
+							<div class="card__price">6.000 KWD</div>
+						</div>
+						<div class="card_count flex">
+							<img src="./img/minus.svg" alt="delete item" />
+							<div class="card_count-drow flex">
+								<p class="card_counting">1</p>
+							</div>
+							<img src="./img/plus.svg" alt="add more items" />
+						</div>
+						<img src="./img/items/small/10.png" alt="" class="card__img" />
+					</section>
+				</div>
+			</div>
+		</main>
 
-				<h2 class="item-name">Milk Chocolate Chips Cookies</h2>
-				<p class="item-desc">12 pieces milk chocolate chips cookies.</p>
-				<br />
-				<img src="" alt="" />
-				<button class="price-btn">7.000 KWD</button>
-			</section>
-			<!-- bites -->
-			<section class="card" id="card">
-				<h1>Adrenaline Bites</h1>
-				<h2 class="item-name">Milk Chocolate Chips Cookies</h2>
-				<p class="item-desc">12 pieces milk chocolate chips cookies.</p>
-				<br />
-				<img src="" alt="" />
-				<button class="price-btn">7.000 KWD</button>
-			</section>
+		<footer class="footer flex">
+			<div class="footer__count flex">
+				<p class="footer_counting">5</p>
+			</div>
+			<div class="footer__price">25.000 KWD</div>
+			<div class="footer__cart"><i class="fa fa-shopping-cart"></i></div>
+		</footer>
+		<div class="bigFooter flex">
+			<div class="footer-logo"></div>
+			<div class="footer-links"></div>
 		</div>
-		<footer></footer>
 	</body>
 </html>

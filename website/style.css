@@ -1,4 +1,15 @@
-/* comment to take care of  */
+/* comment for ahmad:-
+
+*/
+
+/* comment for othamn
+1- cards view  (almost done, the third card
+ is annoying, we can igonre cause its already good)
+2- header menu (almost done) 
+3- adding footer (not y)
+4- img quality ()
+5- font size fix by using the custom fonts
+*/
 
 /*=====================
     basic layout 
@@ -10,19 +21,17 @@
 	margin: 0;
 	padding: 0;
 }
-body {
-	border: 2px solid red;
-}
 
 /*=====================
-    custom layout 
- =====================*/
+	 custom layout 
+  =====================*/
 :root {
 	/* font family */
 	--ff-primary: 'Roboto', 'san-serif';
 	--ff-secondary: 'Barlow', 'san-serif';
 
 	/* font weight */
+	--fw-300: 300;
 	--fw-400: 400;
 	--fw-500: 500;
 	--fw-700: 700;
@@ -44,17 +53,24 @@ body {
 }
 
 /*=====================
-    Short Cuts 
- =====================*/
+	 Short Cuts 
+  =====================*/
 
 .flex {
 	display: flex;
+}
+
+.flex--sb {
 	justify-content: space-between;
 }
 
+.flex--col {
+	flex-direction: column;
+}
+
 /*=====================
-    Typograpghy layout 
- =====================*/
+	 Typograpghy layout 
+  =====================*/
 body {
 	font-family: var(--ff-primary);
 }
@@ -69,18 +85,43 @@ p {
 	font-size: var(--fs-p);
 }
 
+.card__title {
+	font-weight: var(--fw-300);
+	font-family: var(--ff-primary);
+	font-size: 15px;
+}
+
+.card_des {
+	font-weight: var(--fw-400);
+	font-family: var(--ff-primary);
+	font-size: 8px;
+	color: var(--fc-accent);
+}
+
 /*=====================
-    Header layout 
- =====================*/
+	 Header layout 
+  =====================*/
+
+.header {
+	position: fixed;
+	top: 0;
+	background: #fff;
+	z-index: 1000;
+	width: 100%;
+}
+
+main {
+	margin-top: 250px;
+}
 
 .hero {
 	margin: 0 auto;
-	background-image: url('/img/hero.jpg');
+	background-image: url(./img/hero.jpg);
 	background-position: center;
 	background-size: cover;
 	filter: drop-shadow(0px 1px 4px #67cecc);
 	min-height: 164px;
-	max-width: 100%;
+	width: 100%;
 }
 
 .hero__logo {
@@ -95,14 +136,23 @@ p {
 
 .hero__menu {
 	margin-left: 1em;
-	margin-top: 0.5em;
+	margin-top: 15px;
 	cursor: pointer;
 }
 
 .hero__search {
 	margin-right: 1em;
-	margin-top: 0.5em;
+	margin-top: 15px;
 	cursor: pointer;
+}
+.hero__user {
+	display: none;
+}
+.hero__cart {
+	display: none;
+}
+.hero__links {
+	display: none;
 }
 
 .scrollbar--wrap {
@@ -120,143 +170,295 @@ p {
 }
 
 .scorllbar__item {
+	background: var(--clr-primary);
+	border-radius: 7px;
+	margin: 1em;
+	cursor: pointer;
+	white-space: nowrap; /* Fixed the two line problem */
+	padding: 0.5em 1.5em;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.scorllbar__text {
 	font-size: var(--fs-list);
 	font-family: var(--ff-secondary);
 	font-weight: var(--fw-700);
 	color: var(--fc-white);
-	text-align: center;
-	background: #67cecc;
-	box-shadow: 0px 1px 4px #67cecc;
-	border-radius: 7px;
-	margin: 1em;
-	padding: 0.25em 1.5em;
-	cursor: pointer;
 }
 
 /*=====================
-    menu layout 
- =====================*/
-.container {
-	max-width: 540px;
-}
-.story__title--header,
-.story__card {
-	margin: 0.25em;
-}
-.story__title--header {
-	border-bottom: 1px solid var(--clr-primary);
-	margin-top: 1em;
-}
-.story__card {
-	/* this the code opacity, because our opacity work better 
-	with rgba than hex , u can try honey , the code below */
+	 Trying to make the header change size 
+  =====================*/
 
-	/* we should add this color sleeve to our custom values  */
-	background-color: rgba(103, 206, 204, 0.2);
-	/* background-color: var(--clr-primary);
-	opacity: 0.2; */
+/* .hero {
+	  position: fixed;
+	  top: 0;
+  }
+
+  .scrollbar {
+	  margin-top: 150px;
+  } */
+
+/*=====================
+	 Main layout 
+  =====================*/
+
+main {
+	margin-bottom: 50px;
 }
 
-.title {
+/* Story Head */
+
+.story_title {
+	border-bottom: var(--clr-primary) 1px solid;
+	max-width: 95%;
+	margin: 0 auto;
+	margin-top: 11px;
+}
+
+.story_title .title {
+	font-size: 16px;
 	font-weight: var(--fw-700);
+	color: var(--fc-primary);
+	margin-bottom: 9px;
 }
 
-.story__card {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 20px 20px 20px 20px;
-	gap: 3px;
-	grid-template-areas:
-		'pic des price'
-		'pic des price'
-		'pic des price';
+/* Cards */
+
+.card {
+	background: rgba(103, 206, 204, 0.2);
+	opacity: 0.8;
+	box-shadow: inset 0px 0px 2px 2px #ffffff;
+	max-width: 95%;
+	margin: 0 auto;
+	padding-bottom: 7px;
 }
-.story__img {
-	grid-area: pic;
-	grid-column: -1/1;
-	margin: 0 0.5em;
+
+.card__img {
+	order: 1;
+	margin: 11px 11px 11px 18px;
 }
-.story__title {
-	grid-area: des;
-	grid-column: 2/6;
+
+.card_info {
+	order: 2;
+	margin-top: 11px;
 }
-.story_des {
-	grid-area: des;
-	grid-row: -2/2;
-	grid-column: 2/6;
+
+.card_count {
+	order: 3;
+	margin-left: auto;
+	margin-right: 10px;
+	align-self: center;
 }
-.story__price {
-	grid-area: des;
-	grid-column: 2/3;
-	grid-row: 3/4;
-}
-/* price button */
-.story__price {
-	cursor: pointer;
+
+.card__price {
 	font-size: var(--fs-p);
 	font-family: var(--ff-secondary);
 	font-weight: var(--fw-700);
 	color: var(--fc-white);
 	text-align: center;
-	background: #67cecc;
-	border-radius: 5px;
-	padding: 0.5em 2em;
+	background: var(--clr-primary);
+	border-radius: 3px;
+	align-self: flex-start;
+	padding: 0.5em 1.5em;
 }
-.story_count {
-	grid-area: price;
-	grid-column: 5/6;
-	grid-row: 3/4;
-}
-.story_count {
+
+.card_count-drow {
 	border-radius: 50%;
 	width: 34px;
 	height: 34px;
-	margin-right: 0.5em;
 	border: 3px solid var(--clr-primary);
-	background-color: rgba(103, 206, 204, 0.2);
-	color: #121212;
+	justify-content: center;
+	align-items: center;
+	margin: 0.5em;
+	background-color: #ffffff;
+}
+
+.card_counting {
+	font-family: var(--ff-secondary);
+	font-size: 12px;
 	font-weight: var(--fw-700);
-	text-align: center;
 }
 
 /*=====================
-    footer layout 
- =====================*/
+	 footer layout 
+  =====================*/
 .footer {
 	cursor: pointer;
 	background-color: var(--clr-action);
 	color: var(--fc-white);
-	max-width: 450px;
-	margin: 1em 0.5em;
+	width: 100%;
 	border-radius: 10px;
-	text-align: center;
-	display: flex;
-	justify-content: space-between;
 	padding: 0.5em 1em;
+	margin: 1em auto;
+	align-items: center;
+	justify-content: center;
+	/* Making the card fixed to the buttom of the page */
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 0;
 }
 
 .footer__count {
 	border-radius: 50%;
 	width: 34px;
 	height: 34px;
-	margin-right: 0.5em;
-	border: 3px solid white;
-	line-height: 1.8;
-	margin-right: 1em;
+	border: 3px solid #ffffff;
+	justify-content: center;
+	align-items: center;
 }
-.footer__price {
-	margin-top: 0.5em;
+
+.footer_counting {
+	font-family: var(--ff-secondary);
+	font-size: 12px;
+	font-weight: var(--fw-700);
+	color: #ffffff;
+}
+
+.footer__count {
+	margin-left: auto;
+	margin-right: 0.5em;
 }
 
 .footer__cart {
-	margin-left: 1em;
-	font-size: 26px;
+	margin-left: auto;
+	margin-right: 1em;
 }
 
 /*=====================
-    Media Query 1040px layout 
- =====================*/
+	 Media Query 1040px layout 
+  =====================*/
+@media screen and (min-width: 550px) {
+	.header {
+		position: static;
+	}
+	main {
+		margin-top: 50px;
+		margin-right: 50px;
+		margin-left: 50px;
+	}
+	.hero {
+		min-height: 75px;
+		align-items: center;
+		background: #67cecc;
+	}
+	.scrollbar {
+		display: none;
+	}
+	.hero__logo,
+	.hero__menu,
+	.hero__search {
+		align-self: center;
+		margin: 1em;
+	}
+	.hero__logo {
+		margin-right: 3em;
+	}
+	.hero__bigPic {
+		background-image: url(./img/hero.jpg);
+		background-position: center;
+		background-size: cover;
+		min-height: 360px;
+		width: 100%;
+	}
+
+	.container {
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		align-content: flex-start;
+		flex-wrap: wrap;
+	}
+	.card {
+		flex-basis: 30%;
+		flex-direction: column;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+		margin-right: 2.5em;
+		margin-bottom: 3em;
+		border: 2px solid purple;
+	}
+	/* the annoying card */
+	.card:nth-child(3) {
+		border: 3px solid red;
+	}
+
+	.card__img {
+		order: 1;
+		margin: 0;
+	}
+	.card_count {
+		display: none;
+	}
+	.card__price {
+		height: 40px;
+		width: 100%;
+		border-radius: 0;
+	}
+	.card_info {
+		align-items: center;
+	}
+	.footer {
+		display: none;
+	}
+	.hero__menu {
+		display: none;
+	}
+	/* Header layout*/
+	.hero__search {
+		display: none;
+	}
+	.hero__user {
+		display: block;
+		margin-left: 2em;
+		color: white;
+		font-size: 1.5rem;
+		cursor: pointer;
+		flex-basis: 33%;
+	}
+	.hero__cart {
+		display: block;
+		color: white;
+		font-size: 1.5rem;
+		margin-right: 2em;
+		margin-left: 1em;
+	}
+	.hero__links {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		flex-basis: 33%;
+	}
+	.hero__links-style {
+		text-decoration: none;
+		color: white;
+		margin-left: 1em;
+	}
+	/* main layout*/
+	.story_title {
+		margin-bottom: 1em;
+		max-width: 100%;
+	}
+	.card__img {
+	}
+	.card_info {
+		min-height: 100px;
+	}
+	.card__title {
+		margin-bottom: 0.5em;
+	}
+	.card_des {
+		margin-bottom: 1em;
+	}
+	.card__price {
+		max-height: 60px;
+		width: 100%;
+		font-size: 0.75em;
+	}
+}
 
 /*=====================
-    Media Query 2000px layout 
- =====================*/
+	 Media Query 2000px layout 
+  =====================*/
