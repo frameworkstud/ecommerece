@@ -6,7 +6,7 @@
 1- cards view  (almost done, the third card
  is annoying, we can igonre cause its already good)
 2- header menu (almost done) 
-3- adding footer (not y)
+3- adding footer (almost)
 4- img quality ()
 5- font size fix by using the custom fonts
 */
@@ -324,6 +324,9 @@ main {
 	margin-left: auto;
 	margin-right: 1em;
 }
+.bigFooter {
+	display: none;
+}
 
 /*=====================
 	 Media Query 1040px layout 
@@ -378,7 +381,6 @@ main {
 		margin: 0;
 		margin-right: 2.5em;
 		margin-bottom: 3em;
-		border: 2px solid purple;
 	}
 	/* the annoying card */
 	.card:nth-child(3) {
@@ -456,6 +458,48 @@ main {
 		max-height: 60px;
 		width: 100%;
 		font-size: 0.75em;
+	}
+	/* footer */
+	.bigFooter {
+		background-color: #67cecc;
+		min-height: 200px;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.footer-icons {
+		display: flex;
+		flex-direction: column;
+		margin: 1em 2.5em;
+		border: 3px solid red;
+	}
+	.hero__soical-media {
+		display: flex;
+		color: white;
+		align-items: flex-start;
+		justify-content: flex-start;
+		border: 3px solid red;
+	}
+	.fa {
+		margin-right: 0.25em;
+		margin-left: 1em;
+	}
+	.framework {
+		margin-top: 2.5em;
+		color: #fff;
+		font-size: 12px;
+		cursor: pointer;
+	}
+
+	.link {
+		margin-top: 1em;
+		color: white;
+		border: #eb9b3e solid 2px;
+	}
+	.link-button {
+		margin-bottom: 1em;
+	}
+	h6 {
+		margin-bottom: 0.5em;
 	}
 }
 
